@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">dcm4che_android</string>
+    <string name="load">加载</string>
+    <string name="title_activity_main">dcm4che android test</string>
+    
+
+</resources>
