@@ -15,18 +15,18 @@ import org.dcm4che3.data.Tag;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
 	Button btnLoad;
-	TextView textView;
+	
+	EditText editText;
 	ImageView imageView;
 	String testFileName ;
 
@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
 
 	void bindViews() {
 		btnLoad = (Button) findViewById(R.id.btnLoad);
-		textView = (TextView) findViewById(R.id.textView);
+		editText = (EditText) findViewById(R.id.editText);
 		imageView = (ImageView) findViewById(R.id.imageView);
 		btnLoad.setOnClickListener(new OnClickListener() {
 
@@ -108,13 +108,12 @@ public class MainActivity extends Activity {
 			e.printStackTrace();
 		}
 
-		textView.setText(sb.toString());
+		editText.setText(sb.toString());
 	}
 
 	void copyFile(InputStream is, File dstFile) {
 		try {
 
-			System.out.println("copyfile");
 			BufferedInputStream bis = new BufferedInputStream(is);
 			BufferedOutputStream bos = new BufferedOutputStream(
 					new FileOutputStream(dstFile), 1024);
