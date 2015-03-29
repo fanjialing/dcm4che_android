@@ -191,8 +191,8 @@ public class Overlays {
                     TagUtils.toString(tagOverlayOrigin)
                     + " Overlay Origin " + Arrays.toString(ovlyOrigin));
 
-        int x0 = ovlyOrigin[1] - 1;
-        int y0 = ovlyOrigin[0] - 1;
+     //   int x0 = ovlyOrigin[1] - 1;
+     //   int y0 = ovlyOrigin[0] - 1;
 
         int ovlyLen = ovlyRows * ovlyColumns;
         int ovlyOff = ovlyLen * ovlyFrameIndex;
@@ -207,11 +207,13 @@ public class Overlays {
                 if (ovlyIndex >= ovlyLen)
                     continue;
 
-                int y = y0 + ovlyIndex / ovlyColumns;
-                int x = x0 + ovlyIndex % ovlyColumns;
-                try {
-                   ////todo 暂不实现 raster.setSample(x, y, 0, pixelValue);
-                } catch (ArrayIndexOutOfBoundsException ignore) {}
+//                int y = y0 + ovlyIndex / ovlyColumns;
+//                int x = x0 + ovlyIndex % ovlyColumns;
+//                try {
+//                   ////todo 暂不实现 raster.setSample(x, y, 0, pixelValue);
+//                } catch (ArrayIndexOutOfBoundsException ignore) {
+//                	
+//                }
             }
         }
     }

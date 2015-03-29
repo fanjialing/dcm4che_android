@@ -85,7 +85,6 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 

@@ -60,8 +60,12 @@ public class ByteLookupTable extends LookupTable {
     
     @Override
     public  void lookup(Raster srcRaster,Raster destRaster){
-    	
-    	lookup(srcRaster.getShortData(), 0,destRaster.getByteData(),0,srcRaster.length());
+    	if(srcRaster.getDataType() ==Raster.TYPE_BYTE && (destRaster.getDataType()==Raster.TYPE_SHORT||destRaster.getDataType()==Raster.TYPE_USHORT))
+          lookup(srcRaster.getByteData(), 0,destRaster.getShortData(),0,srcRaster.length());
+    	else if((srcRaster.getDataType() ==Raster.TYPE_SHORT ||srcRaster.getDataType() ==Raster.TYPE_USHORT) && destRaster.getDataType()==Raster.TYPE_BYTE)
+    	  lookup(srcRaster.getShortData(), 0,destRaster.getByteData(),0,srcRaster.length());
+    	else if((srcRaster.getDataType() ==Raster.TYPE_SHORT || srcRaster.getDataType() ==Raster.TYPE_USHORT) && (destRaster.getDataType()==Raster.TYPE_SHORT || destRaster.getDataType()==Raster.TYPE_SHORT))
+          lookup(srcRaster.getShortData(), 0,destRaster.getShortData(),0,srcRaster.length());
     	
     }
 
